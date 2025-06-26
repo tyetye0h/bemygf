@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Proposal for Fatima 💍</title>
+  <title>Proposal for Fatima 💖</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -51,7 +51,6 @@
       color: #d14a72;
       min-height: 2.5em;
     }
-    /* Confetti container */
     #confetti-wrapper {
       pointer-events: none;
       position: fixed;
@@ -65,8 +64,8 @@
 </head>
 <body>
 
-  <h1>Fatima, Will You Marry Me? 💍</h1>
-  <p>I want to spend the rest of my life with you. Please say yes!</p>
+  <h1 id="proposalTitle"></h1>
+  <p id="proposalMessage"></p>
 
   <div id="response-section">
     <button id="yesBtn">Yes 💖</button>
@@ -74,13 +73,16 @@
     <p id="responseMessage"></p>
   </div>
 
-  <!-- Confetti container -->
   <div id="confetti-wrapper"></div>
 
-  <!-- Audio element for the song -->
   <audio id="proposalSong" src="https://cdn.pixabay.com/download/audio/2022/03/23/audio_9bff99316f.mp3?filename=night-music-ambient-ambient-5382.mp3"></audio>
 
   <script>
+    const name = "Fatima"; // change to your custom name
+
+    document.getElementById('proposalTitle').textContent = `${name}, will you be my girlfriend? 💖`;
+    document.getElementById('proposalMessage').textContent = `I really like you and want to be with you. Please say yes!`;
+
     const yesBtn = document.getElementById('yesBtn');
     const noBtn = document.getElementById('noBtn');
     const responseMessage = document.getElementById('responseMessage');
@@ -196,7 +198,7 @@
     }
 
     yesBtn.addEventListener('click', () => {
-      responseMessage.textContent = "💖 She said YES! 💖 I'm the happiest person alive!";
+      responseMessage.textContent = "💖 She said YES! 💖 I'm so happy!";
       yesBtn.disabled = true;
       noBtn.disabled = true;
       playSong();
@@ -204,7 +206,7 @@
     });
 
     noBtn.addEventListener('click', () => {
-      responseMessage.textContent = "💔 She said NO. 💔 I'll keep loving you anyway.";
+      responseMessage.textContent = "💔 She said NO. 💔 I'll always care about you.";
       yesBtn.disabled = true;
       noBtn.disabled = true;
       playSong();
